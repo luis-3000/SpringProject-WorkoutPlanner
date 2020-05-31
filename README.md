@@ -1,2 +1,2 @@
 # SpringProject-WorkoutPlanner
-# SpringProject-WorkoutPlanner
+Spring project - WorkoutPlanner
