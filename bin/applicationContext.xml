@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+			<!-- This file is the Spring Container -->
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:context="http://www.springframework.org/schema/context"
@@ -7,7 +8,17 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<!-- 
+	Add a logger config to see logging messages.		
+	- For more detailed logs, set values to "FINEST"
+	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
+	-->
+    <bean id="myLoggerConfig" class="com.joselcastillo.workoutplanner.MyLoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+
+
     <!-- Define your beans here -->
     	<!-- 
     <bean id="myFortuneService"
@@ -15,22 +26,36 @@
     	</bean>
 	-->    
 
+	<!--
  	<bean id="myCoach"
  		class="com.joselcastillo.workoutplanner.TrackCoach">	 		
  	</bean>
-
-    <!--
+	-->
+    
+	<!--
     <bean id="myCoach"
         class="com.joselcastillo.workoutplanner.BaseballCoach">         
     </bean>
     -->
 
+	<!--	
+    <bean id="myCoach"
+        class="com.joselcastillo.workoutplanner.BasketballCoach">         
+    </bean>
+	-->
+	
+	<!--	
+    <bean id="myCoach"
+        class="com.joselcastillo.workoutplanner.CyclingCoach">         
+    </bean>
+	-->
+	
+		
+    <bean id="myCoach"
+        class="com.joselcastillo.workoutplanner.BoxingCoach">         
+    </bean>
+
     <!-- define the dependency -->
 
 
 </beans>
-
-
-
-
-
