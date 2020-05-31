@@ -1,2 +1,4 @@
-module WorkoutPlanner {
-}
+//
+//module WorkoutPlanner {
+//	requires spring.context;
+//}
