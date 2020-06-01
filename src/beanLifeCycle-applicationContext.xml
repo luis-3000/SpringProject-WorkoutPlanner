@@ -26,11 +26,11 @@
 	 	class="com.joselcastillo.workoutplanner.HappyFortuneService">
 	</bean>
 
-	 	<!-- Scope of a bean is Singleton by default -->
-		<!-- Now trying with scope set as 'prototype' -->
     <bean id="myCoach"
-        class="com.joselcastillo.workoutplanner.BaseballCoach"
-		scope="prototype"> 
+        class="com.joselcastillo.workoutplanner.TrackCoach"
+		init-method="doMyStartupStuff"
+		destroy-method="doMyCleanupStuff">
+		       
 		<!-- Inject the dependency/helper by setting up
 		    the "constructor injection"-->
 		<constructor-arg ref="myFortuneService"/><!--Give name of bean to inject-->
@@ -38,7 +38,7 @@
 	
 <!--	
 	<bean id="myCoach"
- 		class="com.joselcastillo.workoutplanner.TrackCoach">
+ 		class="com.joselcastillo.workoutplanner.BaseballCoach">
 		<constructor-arg ref="myFortuneService"/>	
 		
  	</bean>

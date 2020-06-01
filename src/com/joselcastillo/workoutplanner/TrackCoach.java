@@ -27,5 +27,16 @@ public class TrackCoach implements Coach_Interface {
 		// Use my fortuneService to get a fortune
 		return "Your track fortune says: " + fortuneService.getFortune();
 	}
+	
+	// Add an init method
+	public void doMyStartupStuff() {
+		System.out.println("TrackCoach: inside the method doMyStartupStuff()");
+	}
+	
+	// Add a destroy method
+	public void doMyCleanupStuff() {
+		System.out.println("TrackCoach: inside the method doMyCleanupStuff()");
+	}
+	
 
 }
