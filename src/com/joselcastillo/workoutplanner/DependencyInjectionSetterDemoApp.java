@@ -19,7 +19,7 @@ public class DependencyInjectionSetterDemoApp {
 		System.out.println(theCoach.getDailyFortune());
 		
 		// Call the new methods to get the literal values
-		System.out.println("Now showing some literal values previously injected ...");
+		System.out.println("Now, showing some literal values previously injected via the properties file...");
 		
 		System.out.println(theCoach.getEmailAddress());
 		
@@ -34,17 +34,19 @@ public class DependencyInjectionSetterDemoApp {
 
 /* SAMPLE OUTPUT:
 
-Jun 01, 2020 12:11:40 AM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
-FINE: Creating shared instance of singleton bean 'myFortuneService'
-Jun 01, 2020 12:11:40 AM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
 FINE: Creating shared instance of singleton bean 'myCoach'
-Jun 01, 2020 12:11:40 AM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
+Jun 01, 2020 12:37:04 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
 FINE: Creating shared instance of singleton bean 'myCricketCoach'
-CricketCoach: inside no-arg constructor
-CricketCoach: inside setter method - setFortuneService
+CricketCoach: inside the no-arg constructor CricketCoach()
+CricketCoach: inside setter method - setFortuneService()
+CricketCoach: inside setter method - setEmailAddress()
+CricketCoach: inside setter method - setTeam()
 Your Cricket routine: Practice fast bowling for 15 minutes
 Your Cricket fortune says: Today is your lucky day!
-Jun 01, 2020 12:11:40 AM org.springframework.context.support.AbstractApplicationContext doClose
-FINE: Closing org.springframework.context.support.ClassPathXmlApplicationContext@726f3b58, started on Mon Jun 01 00:11:40 CDT 2020
+Now, showing some literal values previously injected via the properties file...
+The email address is: josecastillocs@gmail.com
+The team's name is: The Wingmakers from the 28th Century
+Jun 01, 2020 12:37:04 PM org.springframework.context.support.AbstractApplicationContext doClose
+FINE: Closing org.springframework.context.support.ClassPathXmlApplicationContext@726f3b58, started on Mon Jun 01 12:37:04 CDT 2020
 
 */

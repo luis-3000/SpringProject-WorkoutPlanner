@@ -8,6 +8,11 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+
+	<!-- Add a reference for the context property place holder -->
+	<!-- This loads the properties file: sport.properties  into the Spring environment -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+
 	<!-- Add a logger config to see logging messages.		
 		- For more detailed logs, set values to "FINEST"
 		- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
@@ -73,8 +78,9 @@
 		<property name="fortuneService" ref="myFortuneService"/>
 		
 		<!-- Inject literal values -->
-		<property name="emailAddress" value="josecastillocs@gmail.com"/>
-		<property name="team" value="The Wingmakers"/>
+		<!-- 								 ${propertyname.<name_of_literal_value_to_inject>} -->
+		<property name="emailAddress" value="${foo.email}"/>
+		<property name="team" value="${foo.team}"/>
 	</bean>
 
 

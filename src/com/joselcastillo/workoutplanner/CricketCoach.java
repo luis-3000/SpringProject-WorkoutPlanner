@@ -4,7 +4,7 @@ public class CricketCoach implements Coach_Interface {
 	
 	private FortuneService_Interface fortuneService;
 	
-	// Add new private fields for emallAddress and team
+	// Add new private fields for emallAddress and team to inject them as literal values
 	private String emailAddress;
 	private String team;
 
