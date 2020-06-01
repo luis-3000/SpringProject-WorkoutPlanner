@@ -2,7 +2,7 @@ package com.joselcastillo.workoutplanner;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SetterDemoApp {
+public class DependencyInjectionSetterDemoApp {
 
 	public static void main(String[] args) {
 		
@@ -18,7 +18,14 @@ public class SetterDemoApp {
 		
 		System.out.println(theCoach.getDailyFortune());
 		
-		// Close the context
+		// Call the new methods to get the literal values
+		System.out.println("Now showing some literal values previously injected ...");
+		
+		System.out.println(theCoach.getEmailAddress());
+		
+		System.out.println(theCoach.getTeam());
+		
+		// Close the application context
 		appContext.close();
 		
 	}
