@@ -8,7 +8,7 @@ public class TrackCoach implements Coach_Interface {
 	/* Default constructor to fix issue with earlier prototype 
 	 * in MyApp.java */
 	public TrackCoach() {
-		
+		System.out.println("TrackCoach: inside no-arg constructor");
 	}
 			
 	// Define a constructor for dependency injection

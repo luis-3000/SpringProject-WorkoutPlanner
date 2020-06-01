@@ -8,7 +8,7 @@ public class BasketballCoach implements Coach_Interface {
 	/* Default constructor to fix issue with earlier prototype 
 	 * in MyApp.java */
 	public BasketballCoach() {
-		
+		System.out.println("BasketballCoach: inside no-arg constructor");
 	}
 	
 	// Define a constructor for dependency injection

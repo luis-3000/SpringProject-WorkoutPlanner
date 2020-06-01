@@ -8,10 +8,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- 
-	Add a logger config to see logging messages.		
-	- For more detailed logs, set values to "FINEST"
-	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
+	<!-- Add a logger config to see logging messages.		
+		- For more detailed logs, set values to "FINEST"
+		- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
 	-->
     <bean id="myLoggerConfig" class="com.joselcastillo.workoutplanner.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
@@ -20,41 +19,59 @@
 
 
     <!-- Define your beans here -->
-
-
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
 	<!-- Define the new dependency/helper -->
-	<bean id="myFortune"
+	<bean id="myFortuneService"
 	 	class="com.joselcastillo.workoutplanner.HappyFortuneService">
 	</bean>
 
-	
+ 	
     <bean id="myCoach"
-        class="com.joselcastillo.workoutplanner.BoxingCoach">         
+        class="com.joselcastillo.workoutplanner.BaseballCoach">         
 		<!-- Inject the dependency/helper by setting up
 		    the "constructor injection"-->
-		<constructor-arg ref="myFortune"/><!--Give name of bean to inject-->
-    </bean>
-
-	<!--
- 	<bean id="myCoach"
+		<constructor-arg ref="myFortuneService"/><!--Give name of bean to inject-->
+	
+	</bean>
+	
+<!--	
+	<bean id="myCoach"
  		class="com.joselcastillo.workoutplanner.TrackCoach">
-		<constructor-arg ref="myFortune"/>	
+		<constructor-arg ref="myFortuneService"/>	
+		
  	</bean>
 		
     <bean id="myCoach"
         class="com.joselcastillo.workoutplanner.BasketballCoach">
-		<constructor-arg ref="myFortune"/>
-    </bean>
+		<constructor-arg ref="myFortuneService"/>
+	
+	</bean>
 			
     <bean id="myCoach"
         class="com.joselcastillo.workoutplanner.CyclingCoach">
-		<constructor-arg ref="myFortune"/>
-    </bean>	
+		<constructor-arg ref="myFortuneService"/>
+    
+	</bean>	
 		
     <bean id="myCoach"
         class="com.joselcastillo.workoutplanner.BoxingCoach">
-		<constructor-arg ref="myFortune"/>
-    </bean>
-	-->
+		<constructor-arg ref="myFortuneService"/>
+    
+	</bean>
+-->
+	
+    <bean id="myCricketCoach"
+        class="com.joselcastillo.workoutplanner.CricketCoach">
+		
+		<!-- I cannot use this constructor injection here anymore since it will be done below
+		     with the setter injection	
+			<constructor-arg ref="myFortuneService"/>
+		-->
+		
+		<!-- Set up the setter injection -->
+		<property name="fortuneService" ref="myFortuneService"/>
+	</bean>
+
 
 </beans>
