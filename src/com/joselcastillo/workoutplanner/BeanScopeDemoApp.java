@@ -22,10 +22,10 @@ public class BeanScopeDemoApp {
 		System.out.println("\nAre these beans pointing to the same object? " + 
 						areBeansTheSame);
 		
-		System.out.println("\nConfirming that each bean is pointing to the same memory location: ");
+		System.out.println("\nTesting whether each bean is pointing to the same memory location: ");
 		System.out.println("\nMemory location for theCoach bean: " + theCoach);
 		
-		System.out.println("\nMemory location for alphaCoach bean: " + alphaCoach);
+		System.out.println("\nMemory location for alphaCoach bean: " + alphaCoach + "\n");
 		
 		// Close the application context
 		appContext.close();
@@ -36,19 +36,18 @@ public class BeanScopeDemoApp {
 
 /* SAMPLE OUTPUT
  
-Jun 01, 2020 2:40:06 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
+Jun 01, 2020 2:48:42 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
 FINE: Creating shared instance of singleton bean 'myFortuneService'
-Jun 01, 2020 2:40:06 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry getSingleton
-FINE: Creating shared instance of singleton bean 'myCoach'
 
-Are these beans pointing to the same object? true
+Are these beans pointing to the same object? false
 
-Confirming that each bean is pointing to the same memory location: 
+Testing whether each bean is pointing to the same memory location: 
 
 Memory location for theCoach bean: com.joselcastillo.workoutplanner.BaseballCoach@4b5d6a01
 
-Memory location for alphaCoach bean: com.joselcastillo.workoutplanner.BaseballCoach@4b5d6a01
-Jun 01, 2020 2:40:06 PM org.springframework.context.support.AbstractApplicationContext doClose
-FINE: Closing org.springframework.context.support.ClassPathXmlApplicationContext@726f3b58, started on Mon Jun 01 14:40:06 CDT 2020
+Memory location for alphaCoach bean: com.joselcastillo.workoutplanner.BaseballCoach@4a22f9e2
+
+Jun 01, 2020 2:48:42 PM org.springframework.context.support.AbstractApplicationContext doClose
+FINE: Closing org.springframework.context.support.ClassPathXmlApplicationContext@726f3b58, started on Mon Jun 01 14:48:42 CDT 2020
 
 */
